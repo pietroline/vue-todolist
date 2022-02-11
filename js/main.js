@@ -3,31 +3,66 @@ const vue = new Vue (
     {
         el: "#app",        
         data: {
-          todos:[
-            {
-                text: "studiare javascript",
-                done: false,
-                color: "#c82a0e",
-            },
-            {
-                text: "mangiare",
-                done: true,
-                color: "#c82a0e",
-            },{
-                text: "dormire",
-                done: true,
-                color: "#c82a0e",
-            },{
-                text: "spesa",
-                done: false,
-                color: "#c82a0e",
-            }
-          ],
+            
+            text: "",
+
+            todos:[
+                {
+                    text: "studiare javascript",
+                    done: false,
+                },
+                {
+                    text: "mangiare",
+                    done: true,
+                },
+                {
+                    text: "dormire",
+                    done: true,
+                },
+                {
+                    text: "spesa",
+                    done: false,
+                }
+            ],
         },
 
         methods:{
             removeTodo(indice){
+
+                //rimuovo oggetto di posizione indice nella array todos
                 this.todos.splice(indice,1);
+
+            },
+
+            addTodo(){
+
+                //controllo se non viene inserito del testo, in questo caso evito il push di "niente"
+                if(this.text != ""){
+
+                    //creo un oggetto di cui fare il push, inizializzato al valore di text
+                    const newtodo = {
+                        text: this.text,
+                        done: false,
+                    }
+                    
+                    //push in todos del nuovo todo
+                    this.todos.push(newtodo);
+
+                    //reset text
+                    this.text = "";
+
+                }
+         
+            },
+
+            trueFalse(indice){
+                
+                if(this.todos[indice].done == false){
+                    this.todos[indice].done = true;
+                }else{
+                    this.todos[indice].done = false;
+                }
+
             }
          
         }

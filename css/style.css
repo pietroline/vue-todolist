@@ -29,6 +29,15 @@ body{
     font-size: 3em;
 }
 
+.aggiungi{
+  display: flex;
+  justify-content: center;
+}
+
+.aggiungi button{
+    margin-left: 2em;
+}
+
 .lista{
     margin: 2em;
     font-size: 1em;

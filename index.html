@@ -28,17 +28,27 @@
            
             <h1 class="titolo">to do list</h1>
 
+            <div class="aggiungi">
+                <input type="text" placeholder="Inserisci una cosa da fare" v-model="text" @keyup.enter="addTodo()">
+                <button @click="addTodo()">Aggiungi</button>
+            </div>
+           
             <div class="lista">
-                <ul v-for="(todo, index) in todos">
-                    
-                    <div class="todo">
-                        <div class="rounded"></div>
-                        <li :class="todo.done?'done':''">{{todo.text}}</li>
-                    </div>
-                    
-                    <i @click="removeTodo(index)" class="fa-solid fa-xmark chiudi"></i>
 
-                </ul>
+                <div v-if="todos.length">
+                    <ul v-for="(todo, index) in todos">
+                    
+                        <div class="todo">
+                            <div class="rounded"></div>
+                            <li @click="trueFalse(index)" :class="todo.done?'done':''">{{todo.text}}</li>
+                        </div>
+                        
+                        <i @click="removeTodo(index)" class="fa-solid fa-xmark chiudi"></i>
+    
+                    </ul>
+                </div>
+                <div v-else>Non ci sono elementi</div>
+                
             </div>
 
     
