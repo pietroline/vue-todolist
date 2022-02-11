@@ -7,15 +7,30 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Vue Slider</title>
     
+        <!-- google font Dancing Scripts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+
+        <!-- link style.css -->
         <link rel="stylesheet" href="css/style.css">
+
+       
     </head>
     
     <body>
 
-        <div id="app" class="container">
+        <div id="app" v-cloak class="container">
 
            
-              
+            <h1 class="titolo">to do list</h1>
+            <div class="lista">
+                <ul v-for="todo in todos">
+                    <div class="rounded"></div>
+                    <li :class="todo.done?'done':''">{{todo.text}}</li>
+                </ul>
+            </div>
+
     
 
        </div>

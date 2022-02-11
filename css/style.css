@@ -6,4 +6,54 @@
 
 [v-cloak] {
     display: none;
-  }
+}
+
+body{
+   
+}
+
+.container{
+    border: 1px solid #000;
+    box-shadow: 2em 2em 3em 0em #000;
+
+    margin: 5em auto;
+    width: 50%;  
+}
+
+.titolo{
+    font-family: 'Dancing Script', cursive;
+
+    text-align: center;
+    margin: 1em;
+
+    font-size: 3em;
+}
+
+.lista{
+    margin: 2em;
+    font-size: 1em;
+}
+
+.lista ul{
+    display: flex;
+    align-items: center;
+    
+    margin: 2em auto;
+}
+
+.lista li{
+    list-style: none;
+
+    margin-left: 1em;
+}
+
+.rounded{
+    width: 1em;
+    height: 1em;
+
+    border-radius: 50%;
+}
+
+.done{
+    text-decoration: line-through;
+}
