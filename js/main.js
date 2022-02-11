@@ -43,6 +43,7 @@ const vue = new Vue (
                     const newtodo = {
                         text: this.text,
                         done: false,
+                        color: this.randomColor(),
                     }
                     
                     //push in todos del nuovo todo
@@ -59,12 +60,33 @@ const vue = new Vue (
                 
                 this.todos[indice].done = !this.todos[indice].done;
 
+            },
+
+            randomColor(){
+                //ricordando Math.floor(Math.random() * (max - min + 1) + min); segue che 
+
+                let colore = "#";
+                for(let i=0; i<6; i++){
+                
+                    const random = Math.round(Math.random()); //numero random tra 0 e 1
+
+                    if(random == 1){
+                        const numero = Math.floor(Math.random() * 10); //numero random tra 0 e 9
+                        colore += numero;
+                    }else{
+                        const numeroLettera = Math.floor(Math.random() * 6 + 65); //numero compreso tra 65 e 70, codice ascii corrispondente da A a F
+                        const lettera = String.fromCharCode(numeroLettera);
+                        colore += lettera;
+                    }
+                }
+
+               return `background-color: ${colore};`;
             }
-         
+            
         }
     }
 
-);
+)
 
 
 

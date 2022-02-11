@@ -39,7 +39,7 @@
                     <ul v-for="(todo, index) in todos">
                     
                         <div class="todo">
-                            <div class="rounded"></div>
+                            <div class="rounded" :style="todo.color"></div>
                             <li @click="trueFalse(index)" :class="todo.done?'done':''">{{todo.text}}</li>
                         </div>
                         
