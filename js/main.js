@@ -26,7 +26,9 @@ const vue = new Vue (
         },
 
         methods:{
-         
+            removeTodo(indice){
+                this.todos.splice(indice,1);
+            }
          
         }
     }

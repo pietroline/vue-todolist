@@ -37,8 +37,14 @@ body{
 .lista ul{
     display: flex;
     align-items: center;
-    
+    justify-content: space-between;
+
     margin: 2em auto;
+}
+
+.lista ul:hover{
+    background-color: rgb(233, 233, 233);
+    cursor: pointer;
 }
 
 .lista li{
@@ -47,13 +53,24 @@ body{
     margin-left: 1em;
 }
 
+.lista .todo{
+    display: flex;
+    align-items: center;
+}
+
 .rounded{
     width: 1em;
     height: 1em;
 
     border-radius: 50%;
+
+    background-color: red;
 }
 
 .done{
     text-decoration: line-through;
+}
+
+.chiudi{
+    font-size: 2em;
 }

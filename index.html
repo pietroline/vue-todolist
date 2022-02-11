@@ -12,6 +12,9 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
 
+        <!-- link font awesome 6.0.0 -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
         <!-- link style.css -->
         <link rel="stylesheet" href="css/style.css">
 
@@ -24,10 +27,17 @@
 
            
             <h1 class="titolo">to do list</h1>
+
             <div class="lista">
-                <ul v-for="todo in todos">
-                    <div class="rounded"></div>
-                    <li :class="todo.done?'done':''">{{todo.text}}</li>
+                <ul v-for="(todo, index) in todos">
+                    
+                    <div class="todo">
+                        <div class="rounded"></div>
+                        <li :class="todo.done?'done':''">{{todo.text}}</li>
+                    </div>
+                    
+                    <i @click="removeTodo(index)" class="fa-solid fa-xmark chiudi"></i>
+
                 </ul>
             </div>
 
