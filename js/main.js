@@ -10,18 +10,22 @@ const vue = new Vue (
                 {
                     text: "studiare javascript",
                     done: false,
+                    color: `background-color: #0ca84e;`
                 },
                 {
                     text: "mangiare",
                     done: true,
+                    color: `background-color: #eff114;`
                 },
                 {
                     text: "dormire",
                     done: true,
+                    color: `background-color: #69d9c9;`
                 },
                 {
                     text: "spesa",
                     done: false,
+                    color: `background-color: #e434da;`
                 }
             ],
         },
